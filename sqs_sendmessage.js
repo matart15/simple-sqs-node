@@ -30,8 +30,8 @@ async function sendSqs({
     QueueUrl: queueURL
   };
   try {
-    await sqs.sendMessage(params, function (err, data) 
-      console.log("Success", data.MessageId);
+    const data = await sqs.sendMessage(params).promise();
+    console.log("Success", data);
   } catch (err) {
     console.log("Error", err);
   }
