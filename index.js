@@ -1,3 +1,5 @@
+require('dotenv').config()
+// console.log(process.env)
 // Load the AWS SDK for Node.js
 var AWS = require('aws-sdk');
 const { sendSqs } = require('./sqs_sendmessage.js')
